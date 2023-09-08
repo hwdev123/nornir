@@ -1,13 +1,3 @@
-from nornir import InitNornir
-from nornir_netmiko.tasks import netmiko_send_config
-from nornir_utils.plugins.functions import print_result
-from nornir.core.filter import F
-
-nr = InitNornir(config_file="config.yaml")
-
-
-
-
 def configure_ospf_csr1(task):
     """
     This function filters CSR1 and
@@ -63,10 +53,3 @@ def configure_ospf_csr3(task):
                         "router ospf 1",
                         "network 172.16.60.0 0.0.0.255 area 0",
                         ] 
-            
-
-
-
-    
-
-

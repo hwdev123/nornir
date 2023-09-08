@@ -6,4 +6,7 @@ cisco:
 juniper:
   platform: junos
 
+csr_ny: {}
+csr_la: {}
+csr_tor: {}
 router: {}

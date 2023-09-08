@@ -7,6 +7,7 @@ CSR1:
   groups:
     - cisco
     - router
+    - csr_ny
 
 CSR2:
   hostname: "172.16.60.201"
@@ -16,6 +17,7 @@ CSR2:
   groups:
     - cisco
     - router
+    - csr_la
 
 CSR3:
   hostname: "172.16.60.202"
@@ -25,6 +27,7 @@ CSR3:
   groups:
     - cisco
     - router
+    - csr_tor
 
 Juniper_R1:
   hostname: "172.16.60.203"

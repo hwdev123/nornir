@@ -1197,3 +1197,77 @@ Traceback (most recent call last):
     target_host = nr.filter(hostn=target_host)
 UnboundLocalError: local variable 'target_host' referenced before assignment
 
+2023-09-08 12:22:00,368 -  nornir.core -     INFO -        run() - Running task 'sending_netmiko_config' with args {} on 3 hosts
+2023-09-08 12:26:54,171 -  nornir.core -     INFO -        run() - Running task 'sending_netmiko_config' with args {} on 1 hosts
+2023-09-08 12:26:55,420 -  nornir.core -     INFO -        run() - Running task 'sending_netmiko_config' with args {} on 1 hosts
+2023-09-08 12:26:56,890 -  nornir.core -     INFO -        run() - Running task 'sending_netmiko_config' with args {} on 1 hosts
+2023-09-08 12:32:30,659 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 4 hosts
+2023-09-08 12:32:41,264 - nornir.core.task -    ERROR -      start() - Host 'Juniper_R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'int\\ lo0' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-09-08 12:32:41,265 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 4 hosts
+2023-09-08 12:32:41,991 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 4 hosts
+2023-09-08 12:34:24,107 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 4 hosts
+2023-09-08 12:34:34,720 - nornir.core.task -    ERROR -      start() - Host 'Juniper_R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/hwtech/nornir_project/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'int\\ lo0' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-09-08 12:34:34,721 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 4 hosts
+2023-09-08 12:34:35,390 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 4 hosts
+2023-09-08 12:36:57,188 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:36:58,437 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:36:59,010 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:41:06,601 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:41:07,864 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:41:09,302 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:42:45,084 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:42:46,333 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:42:47,539 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:43:50,484 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:43:51,835 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:43:53,163 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:49:07,694 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:49:09,107 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:49:10,365 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:49:43,874 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 1.1.1.1 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:49:45,233 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 2.2.2.2 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
+2023-09-08 12:49:46,658 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['int lo0', 'ip add 3.3.3.3 255.255.255.0', 'ip ospf network point-to-point', 'router ospf 1', 'network 172.16.60.0 0.0.0.255 area 0']} on 1 hosts
