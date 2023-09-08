@@ -1,0 +1,36 @@
+---
+CSR1:
+  hostname: "172.16.60.200"
+  platform: "ios"
+  username: "admin"
+  password: "cisco123"
+  groups:
+    - cisco
+    - router
+
+CSR2:
+  hostname: "172.16.60.201"
+  platform: "ios"
+  username: "admin"
+  password: "cisco123"
+  groups:
+    - cisco
+    - router
+
+CSR3:
+  hostname: "172.16.60.202"
+  platform: "ios"
+  username: "admin"
+  password: "cisco123"
+  groups:
+    - cisco
+    - router
+
+Juniper_R1:
+  hostname: "172.16.60.203"
+  platform: "junos"
+  username: "admin"
+  password: "juniper123"
+  groups:
+    - juniper
+    - router
