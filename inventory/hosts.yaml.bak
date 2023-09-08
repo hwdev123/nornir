@@ -28,3 +28,12 @@ CSR3:
     - cisco
     - router
     - csr_tor
+
+Juniper_R1:
+  hostname: "172.16.60.203"
+  platform: "junos"
+  username: "admin"
+  password: "juniper123"
+  groups:
+    - juniper
+    - router

@@ -2,10 +2,9 @@ from nornir import InitNornir
 from nornir_netmiko.tasks import netmiko_send_config
 from nornir_utils.plugins.functions import print_result
 from nornir.core.filter import F
-from random import randint
+
 
 nr = InitNornir(config_file="config.yaml")
-random_num = randint(1, 255)
 
 def config_ospf_ny():
     commands = ["int lo0",
